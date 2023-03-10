@@ -1,12 +1,13 @@
-import React from 'react'
-import { ReactDOM } from 'react';
-import WizardingContainer from './WizardingContainer';
+import WizardingContainer from "./Containers/WizardingContainer"
 
+const App = () => {
+  
 
-ReactDOM.render(<React.StrictMode>
-    <WizardingContainer/>
-</React.StrictMode>),
-document.getElementById('root')
-
+    return(
+        <div>
+            <WizardingContainer/>
+        </div>
+    )
+}
 
 export default App;
