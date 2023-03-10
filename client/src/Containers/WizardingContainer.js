@@ -1,33 +1,42 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Home from '../components/Home';
 import React from 'react';
-import NavBar from '../components/NavBar';
-import SpellList from '../components/SpellPage/SpellList';
 import {useState, useEffect} from 'react';
+
+import ElixirsList from '../Components/ElixirsPage/ElixirList';
+import NavBar from '../Components/NavBar';
+import Home from '../Components/Home';
+import SpellList from '../Components/SpellPage/SpellList';
 import IngredientsList from '../components/IngredientsPage/IngredientsList';
 
 //APIS
 //Spells
 const spellsAPI = "https://wizard-world-api.herokuapp.com/Spells";
 const ingredientsAPI = 'https://wizard-world-api.herokuapp.com/Ingredients'
+const elixirsAPI = "https://wizard-world-api.herokuapp.com/Elixirs";
 
 const WizardingContainer = () => {
   
-  const [spells, setSpells] = useState([]);
-  const [ingredients, setIngredients] = useState([])
 
-  useEffect(() => {
-    getSpells()
-    getIngredients()
-  }, [])
+const [spells, setSpells] = useState([]);
+const [elixirs,setElixirs] =useState([])
+const [ingredients, setIngredients] = useState([])
 
-  const getSpells = () => {
-    fetch(spellsAPI)
-    .then(r=>r.json())
-    .then((data) => {
-      setSpells(data)
-    })
-  }
+
+useEffect(() => {
+  getSpells();
+  getElixirs()
+  getIngredients()
+
+}, [])
+
+const getSpells = () => {
+  fetch(spellsAPI)
+  .then(r=>r.json())
+  .then((data) => {
+    setSpells(data)
+  });
+};
+
 
     const getIngredients = () => {
       fetch(ingredientsAPI)
@@ -37,14 +46,21 @@ const WizardingContainer = () => {
       });
     };
   
+const getElixirs = () =>{
+  fetch(elixirsAPI)
+  .then(result =>result.json())
+  .then((data)=>{
+    setElixirs(data)
+  })
+}
 
     return(
         <Router>
             <NavBar/>
-            <Routes>
-                <Route  exact path='/' element={<Home />}/>
+          <Routes>
+            <Route  exact path='/' element={<Home />}/>
                 <Route exact path='/spells' element={<SpellList spells={spells}/>}/>
-                {/* <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs}/>}/> */}
+                <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs}/>}/>
                 <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
                 {/* <Route exact path='/houses' element={<HousesList houses={houses}/>}/> */}
             </Routes>
