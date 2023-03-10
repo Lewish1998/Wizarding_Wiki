@@ -1,9 +1,12 @@
 const IngredientItem = ({ingredient}) => {
   
+    const handleClick = () => {
+      console.log(ingredient)
+    }
 
     return(
         <div>
-            <li>{ingredient.name}</li>
+            <li onClick={handleClick}>{ingredient.name}</li>
         </div>
     );
 };
