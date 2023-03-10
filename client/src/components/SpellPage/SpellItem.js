@@ -1,8 +1,9 @@
+
 const SpellItem = ({spell}) => {
   
 
 return(
-    <div>
+    <div id="spell-item">
         {spell.name}
     </div>
 )

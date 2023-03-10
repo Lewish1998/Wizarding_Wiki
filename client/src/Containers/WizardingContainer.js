@@ -1,12 +1,11 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React from 'react';
 import {useState, useEffect} from 'react';
-
-import ElixirsList from '../Components/ElixirsPage/ElixirList';
+import ElixersList from '../Components/ElixirsPage/ElixirList'
 import NavBar from '../Components/NavBar';
 import Home from '../Components/Home';
 import SpellList from '../Components/SpellPage/SpellList';
-import IngredientsList from '../components/IngredientsPage/IngredientsList';
+import IngredientsList from '../Components/IngredientsPage/IngredientsList';
 
 //APIS
 //Spells
@@ -60,7 +59,7 @@ const getElixirs = () =>{
           <Routes>
             <Route  exact path='/' element={<Home />}/>
                 <Route exact path='/spells' element={<SpellList spells={spells}/>}/>
-                <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs}/>}/>
+                <Route exact path='/elixirs' element={<ElixersList elixirs={elixirs}/>}/>
                 <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
                 {/* <Route exact path='/houses' element={<HousesList houses={houses}/>}/> */}
             </Routes>
