@@ -1,0 +1,20 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    font-size: 30px;
+    list-style: none;
+    height: 80px;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.navbar>li{
+    transition: 600ms;
+}
+.navbar>li:hover{
+    transform:scale(120%);
+}
+
+
+
