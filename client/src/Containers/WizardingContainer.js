@@ -15,7 +15,7 @@ const WizardingContainer = () => {
 
 
 const spellsAPI = "https://wizard-world-api.herokuapp.com/Spells";
-const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses';
+const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses'
 
 const [spells, setSpells] = useState([]);
 

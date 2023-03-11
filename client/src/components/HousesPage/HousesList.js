@@ -1,30 +1,21 @@
 import React, {useState} from 'react';
-import HousesItem from './HousesItem';
+import HouseDetails from './HouseDetails';
+import HouseSelector from './HouseSelector';
 
 const HousesList = ({houses}) => {
 
     const [selectedHouse, setSelectedHouse] = useState([])
 
-    const HousesItem = selectedHouse.map((house) => {
-        return <option><HousesItem house={house} key={house.id}/></option>
-    })
 
-    const handleSelectChange = (event) => {
-        setSelectedHouse(event.target.value)
-        console.log(selectedHouse)
+    const onHouseSelected = (house) => {
+        setSelectedHouse(house)
     }
 
     return (
     <div>
-        <h2>Hooses:</h2>
-        <select onChange={handleSelectChange}>
-            {houses.map((house) => {
-                return <option value={house}>{house.name}</option>
-            })}
-        </select>
-
-        {HousesItem}
-
+        <h1>Houses:</h1>
+        <HouseSelector houses={houses} onHouseSelected={onHouseSelected}/>
+        {selectedHouse ? <HouseDetails house={selectedHouse}/> : null}
     </div>
     )
 };

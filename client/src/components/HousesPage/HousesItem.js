@@ -1,13 +1,9 @@
 import React from 'react';
 
-const HousesItem = ({house}) => {
-
-
+const HousesItem = ({index, house}) => {
 
     return (
-    <div>
-        {house.name}
-    </div>
+        <option value={index}>{house.name}</option>
     )
 };
 
