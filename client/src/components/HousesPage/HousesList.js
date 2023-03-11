@@ -4,7 +4,7 @@ import HouseSelector from './HouseSelector';
 
 const HousesList = ({houses}) => {
 
-    const [selectedHouse, setSelectedHouse] = useState([])
+    const [selectedHouse, setSelectedHouse] = useState(null)
 
 
     const onHouseSelected = (house) => {
@@ -15,7 +15,7 @@ const HousesList = ({houses}) => {
     <div>
         <h1>Houses:</h1>
         <HouseSelector houses={houses} onHouseSelected={onHouseSelected}/>
-        {selectedHouse ? <HouseDetails house={selectedHouse}/> : null}
+        {selectedHouse ? <HouseDetails house={selectedHouse} /> : null}
     </div>
     )
 };
