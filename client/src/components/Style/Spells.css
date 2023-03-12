@@ -1,0 +1,17 @@
+#spells-container {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    list-style: none;
+    margin: 2rem;
+}
+
+#spell-item {
+    border:rgba(255,255,255,1) solid;
+    padding: 10px;
+    margin: 0.7rem;
+    background-color: rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

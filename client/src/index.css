@@ -26,11 +26,12 @@ font-family: 'Yuji Boku', serif; */
 
 
 body{
-background-image: linear-gradient(red, blue);
+background-image: linear-gradient(black, green);
 background-image: url('./Components/images/bridge.jpg');
 background-size: 2000px;
 background-repeat: no-repeat;
 min-height: 1000px;
+background-attachment: fixed;
 }
 
 * {

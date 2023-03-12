@@ -1,4 +1,4 @@
-
+import '../Style/Spells.css'
 import { useState } from "react";
 import SpellItem from "./SpellItem"
 
@@ -58,13 +58,15 @@ const SpellList = ({spells, handleSpellChange}) => {
         </select>
 
 
+          <div id='spells-container'>
         {SpellsItems.filter((list) => {
           if (query === "") {
-            return list;
+            return <ul id='list-item'>list</ul>;
           } else if (list.props.spell.name.includes(query)) {
-            return list;
+            return <ul>list</ul>;
           }
         })}
+        </div>
       </div>
 
 
