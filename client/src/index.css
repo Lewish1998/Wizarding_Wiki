@@ -37,3 +37,24 @@ background-attachment: fixed;
 * {
     margin: 0px;
 }
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+.grid-item {
+    height: 60px;
+    width: 60px;
+    background-color: rgb(199, 255, 245);
+    opacity: 0;
+    transition: opacity 2s ease 0.4s, transform 0.8s ease;
+    transform: scale(1);
+}
+
+.grid-item:hover {
+    opacity: 0.4;
+    transition: opacity 0.2s ease;
+    transform: scale(1.5);
+}

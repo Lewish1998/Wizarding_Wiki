@@ -12,9 +12,9 @@ const IngredientsList = ({ingredients}) => {
     })
 
     return (
-        <div>
-        <h1>Ingredients</h1>
-        <div className="search">
+        <div className='search-bar-container'>
+        <h1 className='spell-heading'>Ingredients</h1>
+        <div className="flex-center-top">
           <input
             autocapitalize="word"
             type={"text"}
@@ -22,7 +22,7 @@ const IngredientsList = ({ingredients}) => {
             onChange={(event) => setQuery(event.target.value)}
           />
         </div>
-{/*   
+{/*   <div className="flex-center-top">
         <select onChange={handleChange}>
           {ElixirDifficulty.map((difficulty) => {
             return (
@@ -31,7 +31,10 @@ const IngredientsList = ({ingredients}) => {
               </option>
             );
           })}
-        </select> */}
+        </select>
+        </div> */}
+
+          <div id='spells-container'>
         {IngredientsItems.filter((list) => {
           if (query === "") {
             return list;
@@ -39,6 +42,7 @@ const IngredientsList = ({ingredients}) => {
             return list;
           }
         })}
+        </div>
       </div>
 
 
