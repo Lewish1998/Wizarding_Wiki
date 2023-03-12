@@ -20,13 +20,17 @@ const SpellList = ({spells, handleSpellChange}) => {
     const SpellsItems = spells.sort((a,b) => a.name > b.name ? 1: -1).map((spell) => {
       return <SpellItem spell={spell} key={spell.id} />
     })
+
     const [query, setQuery] = useState("");
+    const [type, setType] = useState('')
 
 
 
     const handleChange = (e) => {
       handleSpellChange(e.target.value)
-      console.log(e.target.value)
+      setType(e.target.value)
+      console.log(`Type: ${type}`)
+
     }
 
 
@@ -36,7 +40,7 @@ const SpellList = ({spells, handleSpellChange}) => {
         <h1>Spells</h1>
         <div className="search">
           <input
-            autocapitalize="word"
+            autoCapitalize="word"
             type={"text"}
             placeholder="Search Here"
             onChange={(event) => setQuery(event.target.value)}
@@ -52,6 +56,7 @@ const SpellList = ({spells, handleSpellChange}) => {
             );
           })}
         </select>
+
 
         {SpellsItems.filter((list) => {
           if (query === "") {

@@ -21,6 +21,7 @@ const [spells, setSpells] = useState([]);
 const [elixirs,setElixirs] =useState([])
 const [ingredients, setIngredients] = useState([])
 const [selectedElixir,setSelectedElixir]=useState([])
+const [selectedSpellType, setSelectedSpellType] = useState([])
 
 const handleSelectedElixir = elixir =>{
   setSelectedElixir(elixir)
@@ -42,13 +43,13 @@ const getSpells = () => {
 };
 
 
-    const getIngredients = () => {
-      fetch(ingredientsAPI)
-      .then(r=>r.json())
-      .then((data) => {
-        setIngredients(data)
-      });
-    };
+const getIngredients = () => {
+  fetch(ingredientsAPI)
+  .then(r=>r.json())
+  .then((data) => {
+    setIngredients(data)
+  });
+};
   
 const getElixirs = (url) =>{
   fetch(url)
@@ -65,8 +66,13 @@ const getSelectedElixirs = (difficulty) =>{
     setElixirs(data)
   })
 }
+
 const handleElixirChanges = difficulty =>{
   getSelectedElixirs(difficulty)
+}
+
+const handleSpellChange = (type) => {
+  setSelectedSpellType(type)
 }
 
     return(
@@ -74,7 +80,7 @@ const handleElixirChanges = difficulty =>{
             <NavBar/>
           <Routes>
             <Route  exact path='/' element={<Home />}/>
-                <Route exact path='/spells' element={<SpellList spells={spells}/>}/>
+                <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange}/>}/>
                 <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs} handleElixirChanges={handleElixirChanges}/>}/>
                 <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
                 {/* <Route exact path='/houses' element={<HousesList houses={houses}/>}/> */}
