@@ -15,7 +15,7 @@ const elixirsAPI = "https://wizard-world-api.herokuapp.com/Elixirs";
 
 const WizardingContainer = () => {
   
-
+  
 const [spells, setSpells] = useState([]);
 const [elixirs,setElixirs] =useState([])
 const [ingredients, setIngredients] = useState([])
