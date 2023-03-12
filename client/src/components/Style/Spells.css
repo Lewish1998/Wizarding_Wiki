@@ -1,6 +1,7 @@
 #spells-container {
     display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
+    /* grid-template-columns: 25% 25% 25% 25%; */
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     list-style: none;
     margin: 2rem;
 }
