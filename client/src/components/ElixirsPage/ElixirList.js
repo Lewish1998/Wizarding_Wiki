@@ -35,8 +35,7 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
       <h1>Elixirs</h1>
       <div className="search">
         <input
-          autocapitalize="word"
-
+          autoCapitalize="word"
           type={"text"}
           placeholder="Search Here"
           onChange={(event) => setQuery(event.target.value)}

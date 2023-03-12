@@ -2,7 +2,7 @@
 import { useState } from "react";
 import SpellItem from "./SpellItem"
 
-const SpellList = ({spells}) => {
+const SpellList = ({spells, handleSpellChange}) => {
 
   const SpellType = [
     'Charm',
@@ -22,9 +22,13 @@ const SpellList = ({spells}) => {
     })
     const [query, setQuery] = useState("");
 
-    const handleChange = () => {
-      console.log(SpellItem)
+
+
+    const handleChange = (e) => {
+      handleSpellChange(e.target.value)
+      console.log(e.target.value)
     }
+
 
 
     return (
