@@ -3,11 +3,28 @@ import { useState } from "react";
 import SpellItem from "./SpellItem"
 
 const SpellList = ({spells}) => {
-  
+
+  const SpellType = [
+    'Charm',
+    'Spell',
+    'HealingSpell',
+    'Transfiguration',
+    'DarkCharm',
+    'Jinx',
+    'Cures',
+    'MagicalTransportation',
+    'Conjuration',
+    'Hex'
+  ]
+
     const SpellsItems = spells.sort((a,b) => a.name > b.name ? 1: -1).map((spell) => {
       return <SpellItem spell={spell} key={spell.id} />
     })
     const [query, setQuery] = useState("");
+
+    const handleChange = () => {
+      console.log(SpellItem)
+    }
 
 
     return (
@@ -20,22 +37,18 @@ const SpellList = ({spells}) => {
             placeholder="Search Here"
             onChange={(event) => setQuery(event.target.value)}
           />
+
         </div>
-  
-        <select>
-          <option>Insert</option>
-          <option>Options</option>
-          <option>Here</option>
-        </select>
-        {/* <select onChange={handleChange}>
-          {ElixirDifficulty.map((difficulty) => {
+        <select onChange={handleChange}>
+          {SpellType.map((SpellType) => {
             return (
-              <option key={difficulty} value={difficulty}>
-                {difficulty}
+              <option key={SpellType} value={SpellType}>
+                {SpellType}
               </option>
             );
           })}
-        </select> */}
+        </select>
+
         {SpellsItems.filter((list) => {
           if (query === "") {
             return list;
