@@ -1,0 +1,38 @@
+/* font-family: 'Aboreto', cursive;
+font-family: 'Beau Rivage', cursive;
+font-family: 'Bodoni Moda', serif;
+font-family: 'Carattere', cursive;
+font-family: 'Caveat', cursive;
+font-family: 'Yuji Boku', serif; */
+
+.heading {
+    font-family: 'Aboreto', cursive;
+    /* font-family: 'Beau Rivage', cursive; */
+    /* font-family: 'Bodoni Moda', serif; */
+    /* font-family: 'Carattere', cursive; */
+    /* font-family: 'Caveat', cursive; */
+    /* font-family: 'Yuji Boku', serif; */
+}
+
+.text {
+        /* font-family: 'Aboreto', cursive; */
+        /* font-family: 'Beau Rivage', cursive; */
+        /* font-family: 'Bodoni Moda', serif; */
+        /* font-family: 'Carattere', cursive; */
+        /* font-family: 'Caveat', cursive; */
+        /* font-family: 'Yuji Boku', serif; */
+        font-family:'Courier New', Courier, monospace
+}
+
+
+body{
+background-image: linear-gradient(red, blue);
+background-image: url('./Components/images/bridge.jpg');
+background-size: 2000px;
+background-repeat: no-repeat;
+min-height: 1000px;
+}
+
+* {
+    margin: 0px;
+}
