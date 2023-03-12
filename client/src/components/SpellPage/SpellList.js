@@ -36,9 +36,9 @@ const SpellList = ({spells, handleSpellChange}) => {
 
 
     return (
-      <div>
-        <h1>Spells</h1>
-        <div className="search">
+      <div className='search-bar-container'>
+        <h1 className='spell-heading'>Spells</h1>
+        <div className="flex-center-top">
           <input
             autoCapitalize="word"
             type={"text"}
@@ -47,6 +47,7 @@ const SpellList = ({spells, handleSpellChange}) => {
           />
 
         </div>
+        <div className='flex-center-top'>
         <select onChange={handleChange}>
           {SpellType.map((SpellType) => {
             return (
@@ -56,6 +57,7 @@ const SpellList = ({spells, handleSpellChange}) => {
             );
           })}
         </select>
+        </div>
 
 
           <div id='spells-container'>
