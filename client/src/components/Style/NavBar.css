@@ -16,5 +16,11 @@
     transform:scale(120%);
 }
 
+.link {
+    color: rgba(255, 255, 255, 0.6);
+    transition:600ms;
+}
 
-
+.link:hover {
+    color:rgb(217, 255, 156);
+}
