@@ -1,14 +1,14 @@
 import '../Style/Spells.css'
 
-const IngredientItem = ({ingredient}) => {
+const IngredientItem = ({ingredient,onIngredientClicked}) => {
   
     const handleClick = () => {
-      console.log(ingredient)
+        onIngredientClicked(ingredient)
     }
 
     return(
         <div id='spell-item'>
-            <li onClick={handleClick}>{ingredient.name}</li>
+            <li onClick={handleClick} value={ingredient}>{ingredient.name}</li>
         </div>
     );
 };

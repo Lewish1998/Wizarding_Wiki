@@ -23,7 +23,8 @@ const [elixirs,setElixirs] =useState([])
 const [ingredients, setIngredients] = useState([])
 const [selectedElixir,setSelectedElixir]=useState([])
 const [selectedSpellType, setSelectedSpellType] = useState([])
-
+const [selectedIngredient,setselectedIngredient]=useState(null)
+const [elixirsWithIngredients,setElixirsWithIngredients]=useState([])
 
 const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses'
 
@@ -31,6 +32,14 @@ const handleSelectedElixir = elixir =>{
   setSelectedElixir(elixir)
 }
 
+const onIngredientClicked = (ingredient)=>{
+  setselectedIngredient(ingredient.name.split(' ').join("%20"))
+  fetch('https://wizard-world-api.herokuapp.com/Elixirs?Ingredient='+selectedIngredient)
+  .then(r=>r.json())
+  .then((data) => {
+    setElixirsWithIngredients(data)
+  })
+}
 
 const [houses, setHouses] = useState([]);
 
@@ -105,7 +114,7 @@ const getHouses = () => {
             <Route  exact path='/' element={<Home />}/>
                 <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} />}/>
                 <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs} handleElixirChanges={handleElixirChanges}/>}/>
-                <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
+                <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients} onIngredientClicked={onIngredientClicked} selectedIngredient={selectedIngredient} elixirsWithIngredients={elixirsWithIngredients}/>}/>
                 <Route exact path='/houses' element={<HousesList houses={houses}/>}/>
             </Routes>
         </Router>
