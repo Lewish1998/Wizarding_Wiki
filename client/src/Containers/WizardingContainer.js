@@ -100,7 +100,7 @@ const getHouses = () => {
 
     return(
         <Router>
-            <NavBar spells={spells}/>
+            <NavBar spells={spells} handleSpellChange={handleSpellChange}/>
           <Routes>
                 <Route exact path='/' element={<Home />}/>
                 <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} />}/>

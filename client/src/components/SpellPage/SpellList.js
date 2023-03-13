@@ -2,7 +2,8 @@ import '../Style/Spells.css'
 import { useState } from "react";
 import SpellItem from "./SpellItem"
 
-const SpellList = ({spells, handleSpellChange}) => {
+
+const SpellList = ({spells, handleSpellChange, charm}) => {
 
   const SpellType = [
     'Charm',
@@ -11,7 +12,7 @@ const SpellList = ({spells, handleSpellChange}) => {
     'Transfiguration',
     'DarkCharm',
     'Jinx',
-    'Cures',
+    // 'Curses',
     'MagicalTransportation',
     'Conjuration',
     'Hex'
@@ -30,10 +31,8 @@ const SpellList = ({spells, handleSpellChange}) => {
       handleSpellChange(e.target.value)
       setType(e.target.value)
       console.log(`Type: ${type}`)
-
+      console.log(charm)
     }
-
-
 
     return (
       <div className='search-bar-container'>

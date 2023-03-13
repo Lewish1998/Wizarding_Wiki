@@ -1,53 +1,62 @@
 import './Style/NavBar.css';
-import React from "react";
+import React, { useState } from "react";
 import { Link, redirect } from 'react-router-dom';
 import SpellType from './SpellPage/SpellList';
 
-const NavBar = () => {
-  
-    const handleSelect = (e) => {
-        if (e.target.value === 'Elixirs'){
-            console.log('yes')
-            return redirect('/elixirs')
-        } else {
-            console.log('No')
-        }
+const NavBar = ({handleSpellChange}) => {
+
+    const [type, setType] = useState('')
+
+    const handleClick = (e) => {
+        handleSpellChange(e.traget.value)
+        setType(e.traget.value)
     }
 
+    const SpellType = [
+        'Charm',
+        'Spell',
+        'HealingSpell',
+        'Transfiguration',
+        'DarkCharm',
+        'Jinx',
+        // 'Cures',
+        'MagicalTransportation',
+        'Conjuration',
+        'Hex'
+      ]
 
-      const ElixirDifficulty = [
-        "Unknown",
-        "Advanced",
-        "Moderate",
-        "Beginner",
-        "OneOfAKind",
-        "OrdinaryWizardingLevel",
-        "",
-      ];
+    //   <div className='flex-center-top'>
+    //   <select onChange={handleChange}>
+    //     {SpellType.map((SpellType) => {
+    //       return (
+    //         <option key={SpellType} value={SpellType}>
+    //           {SpellType}
+    //         </option>
+    //       );
+    //     })}
+    //   </select>
+    //   </div>
+
 
     return(
         <nav className='nav-container'>
         
+
+
             <ul className='navbar'>
                 <li id='nav-home'><Link to='/' className='link'>Home</Link></li>
-
-                {/* <li id='nav-home'><Link to='/spells' className='link'>Spells</Link></li> */}
                 <div className='dropdown'>
                 <button className='dropdown-button link navbar'>Spells</button>
                     <div className='dropdown-content'>
                         <a href='/spells'>All Spells</a>
-                        <a href='/spells'>Charm</a>
-                        <a href='/spells'>Spell</a>
-                        <a href='/spells'>Healing</a>
-                        <a href='/spells'>Transfiguration</a>
-                        <a href='/spells'>DarkCharm</a>
-                        <a href='/spells'>Jinx</a>
-                        <a href='/spells'>Cures</a>
-                        <a href='/spells'>Magical Transportation</a>
-                        <a href='/spells'>Conjuration</a>
-                        <a href='/spells'>Hex</a>
+                        {SpellType.map((SpellType) => {
+                          return(<a href='/spells' value={SpellType} key={SpellType} onClick={handleClick}>{SpellType}</a>)
+                        })}
                     </div>
                 </div>
+
+
+
                 {/* <li id='nav-elixirs'><Link to='/elixirs' className='link'>Elixirs</Link></li> */}
                 <div className='dropdown'>
                 <button className='dropdown-button link navbar'>Elixirs</button>
