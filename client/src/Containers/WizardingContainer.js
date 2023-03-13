@@ -68,7 +68,7 @@ const getSelectedElixirs = (difficulty) =>{
 }
 
 const getSelectedSpells = (type) =>{
-  fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+typew)
+  fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
   .then(result =>result.json())
   .then((data)=>{
     setSelectedSpellType(data)
