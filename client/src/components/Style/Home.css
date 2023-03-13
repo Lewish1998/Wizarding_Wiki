@@ -1,0 +1,25 @@
+.home-page-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 230px;
+    left: 200px;
+    right: 200px;
+}
+
+.main-heading {
+    font-size: max(8vw, 70px);
+    color: rgba(255,255,255,0.8);
+}
+
+.home-page-content, .text{
+    font-size: max(22px, 14px);
+    color: rgba(255,255,255,0.8);
+    background-color: rgba(0,0,0,0.4);
+    border-radius: 10px;
+
+
+}

@@ -1,3 +1,5 @@
+import '../Style/Spells.css'
+
 const IngredientItem = ({ingredient}) => {
   
     const handleClick = () => {
@@ -5,7 +7,7 @@ const IngredientItem = ({ingredient}) => {
     }
 
     return(
-        <div>
+        <div id='spell-item'>
             <li onClick={handleClick}>{ingredient.name}</li>
         </div>
     );

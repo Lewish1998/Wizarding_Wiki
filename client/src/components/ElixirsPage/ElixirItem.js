@@ -1,8 +1,10 @@
+import '../Style/Spells.css'
+
 const ElixirItem = ({elixir})=>{
 
 return(
-    <div>
-        {elixir.name}
+    <div id="spell-item">
+        <li>{elixir.name}</li>
     </div>
 )
 

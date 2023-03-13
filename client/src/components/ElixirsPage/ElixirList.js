@@ -1,3 +1,5 @@
+
+import '../Style/Spells.css'
 import { useState } from "react";
 import ElixirItem from "./ElixirItem";
 
@@ -31,17 +33,20 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
   const [query, setQuery] = useState("");
 
   return (
-    <div>
-      <h1>Elixirs</h1>
-      <div className="search">
-        <input
-          autocapitalize="word"
 
+    <div className='search-bar-container'>
+      <h1 className='spell-heading'>Elixirs</h1>
+      <div className="flex-center-top">
+        <input
+          autoCapitalize="word"
           type={"text"}
           placeholder="Search Here"
           onChange={(event) => setQuery(event.target.value)}
         />
       </div>
+
+
+    <div className='flex-center-top'>
 
       <select onChange={handleChange}>
         {ElixirDifficulty.map((difficulty) => {
@@ -52,13 +57,16 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
           );
         })}
       </select>
+      </div>
+        <div id='spells-container'>
       {ElixirItems.filter((list) => {
         if (query === "") {
-          return list;
+          return <ul id='list-item'>list</ul>;
         } else if (list.props.elixir.name.includes(query)) {
-          return list;
+          return <ul>list;</ul>
         }
       })}
+      </div>
     </div>
   );
 };
