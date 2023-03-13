@@ -1,6 +1,7 @@
 import { useState } from "react";
 import IngredientItem from "./IngredientsItem";
 import IngredientSelector from "./IngredientsSelected";
+import '../Style/Spells.css'
 
 
 const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient,elixirsWithIngredients}) => {
@@ -17,6 +18,7 @@ const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient,eli
         <h1 className='spell-heading'>Ingredients</h1>
         <div className="flex-center-top">
           <input
+            className='search'
             autocapitalize="word"
             type={"text"}
             placeholder="Search Here"
