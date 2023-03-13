@@ -1,32 +1,44 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Home from '../components/Home';
 import React from 'react';
-import NavBar from '../components/NavBar';
-import SpellList from '../components/SpellPage/SpellList';
 import {useState, useEffect} from 'react';
 import HousesList from '../components/HousesPage/HousesList';
 
+import ElixirsList from '../Components/ElixirsPage/ElixirList';
+import NavBar from '../Components/NavBar';
+import Home from '../Components/Home';
+import SpellList from '../Components/SpellPage/SpellList';
+import IngredientsList from '../Components/IngredientsPage/IngredientsList'
+
 //APIS
 //Spells
+const spellsAPI = "https://wizard-world-api.herokuapp.com/Spells";
+const ingredientsAPI = 'https://wizard-world-api.herokuapp.com/Ingredients'
+const elixirsAPI = "https://wizard-world-api.herokuapp.com/Elixirs";
 
 const WizardingContainer = () => {
   
 
+const [spells, setSpells] = useState([]);
+const [elixirs,setElixirs] =useState([])
+const [ingredients, setIngredients] = useState([])
+const [selectedElixir,setSelectedElixir]=useState([])
 
+const [selectedSpellType, setSelectedSpellType] = useState([])
 
-const spellsAPI = "https://wizard-world-api.herokuapp.com/Spells";
 const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses'
 
-const [spells, setSpells] = useState([]);
+const handleSelectedElixir = elixir =>{
+  setSelectedElixir(elixir)
+}
 
 
 const [houses, setHouses] = useState([]);
 
 useEffect(() => {
   getSpells();
-
-
   getHouses();
+  getElixirs(elixirsAPI)
+  getIngredients()
 }, [])
 
 const getSpells = () => {
@@ -36,7 +48,50 @@ const getSpells = () => {
     setSpells(data)
   });
 };
+
+
+const getIngredients = () => {
+  fetch(ingredientsAPI)
+  .then(r=>r.json())
+  .then((data) => {
+    setIngredients(data)
+  });
+};
   
+const getElixirs = (url) =>{
+  fetch(url)
+  .then(result =>result.json())
+  .then((data)=>{
+    setElixirs(data)
+  })
+}
+
+const getSelectedElixirs = (difficulty) =>{
+  fetch("https://wizard-world-api.herokuapp.com/Elixirs?Difficulty="+difficulty)
+  .then(result =>result.json())
+  .then((data)=>{
+    setElixirs(data)
+  })
+}
+const handleElixirChanges = difficulty =>{
+  getSelectedElixirs(difficulty)
+}
+
+const getSelectedSpells = (type) =>{
+  fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
+  .then(result =>result.json())
+  .then((data)=>{
+    setSpells(data)
+  })
+}
+
+const handleElixirChanges = difficulty =>{
+  getSelectedElixirs(difficulty)
+}
+
+const handleSpellChange = (type) => {
+  getSelectedSpells(type)
+}
 
 const getHouses = () => {
   fetch(housesAPI)
@@ -49,12 +104,13 @@ const getHouses = () => {
     return(
         <Router>
             <NavBar/>
-            <Routes>
+          <Routes>
             <Route  exact path='/' element={<Home />}/>
-                <Route exact path='/spells' element={<SpellList spells={spells}/>}/>
-                <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs}/>}/>
-                <Route exact path='/ingredients' element={<IngredientslList ingredients={ingredients}/>}/>
-                <Route exact path='/houses' element={<HousesList houses={houses}/>}/></Routes>
+                <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} />}/>
+                <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs} handleElixirChanges={handleElixirChanges}/>}/>
+                <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
+                <Route exact path='/houses' element={<HousesList houses={houses}/>}/>
+            </Routes>
         </Router>
     )
 }
