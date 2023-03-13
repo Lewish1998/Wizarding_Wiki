@@ -10,8 +10,8 @@ const SpellItem = ({spell}) => {
     }
 
 return(
-    <div id="spell-item">
-        <p onClick={toggle}>{spell.name}</p>
+    <div id="spell-item" onClick={toggle}>
+        <b>{spell.name}</b>
         {open &&
         <div>
         <li><b>INCANTATION </b>{spell.incantation}</li>

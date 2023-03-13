@@ -7,8 +7,8 @@ const IngredientItem = ({ingredient,onIngredientClicked}) => {
     }
 
     return(
-        <div id='spell-item'>
-            <li onClick={handleClick} value={ingredient}>{ingredient.name}</li>
+        <div id='spell-item' onClick={handleClick}>
+            <li  value={ingredient}>{ingredient.name}</li>
         </div>
     );
 };
