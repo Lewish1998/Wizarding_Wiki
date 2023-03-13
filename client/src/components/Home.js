@@ -2,7 +2,6 @@ import './Style/Home.css'
 
 const Home = () => {
   
-
     return (
         <div className='home-page-top'>
             <h1 className='main-heading heading'>Wizarding Wiki</h1>

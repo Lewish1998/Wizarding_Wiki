@@ -40,9 +40,11 @@ const NavBar = ({handleSpellChange}) => {
                 <div className='dropdown'>
                 <button className='dropdown-button link navbar'>Spells</button>
                     <div className='dropdown-content'>
-                        <a href='/spells'>All Spells</a>
+                    <Link to='/spells' className='link'>All Spells</Link>
                         {SpellType.map((SpellType) => {
-                          return(<a href='/spells' value={SpellType} key={SpellType}>{SpellType}</a>)
+                          return(
+                          <Link to='/spells' className='link' key={SpellType}>{SpellType}</Link>
+                          )
                         })}
                     </div>
                 </div>
