@@ -31,6 +31,10 @@ const handleSelectedElixir = elixir =>{
   setSelectedElixir(elixir)
 }
 
+const [selectedIngredient,setselectedIngredient]=useState(null)
+const onIngredientClicked = (ingredient)=>{
+  setselectedIngredient(ingredient)
+}
 
 const [houses, setHouses] = useState([]);
 
@@ -105,7 +109,7 @@ const getHouses = () => {
             <Route  exact path='/' element={<Home />}/>
                 <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} />}/>
                 <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs} handleElixirChanges={handleElixirChanges}/>}/>
-                <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
+                <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients} onIngredientClicked={onIngredientClicked} selectedIngredient={selectedIngredient}/>}/>
                 <Route exact path='/houses' element={<HousesList houses={houses}/>}/>
             </Routes>
         </Router>

@@ -1,14 +1,16 @@
 import { useState } from "react";
 import IngredientItem from "./IngredientsItem";
+import IngredientSelector from "./IngredientsSelected";
 
 
-const IngredientsList = ({ingredients}) => {
+const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient}) => {
 
   const [query, setQuery] = useState("");
 
 
+
     const IngredientsItems = ingredients.sort((a,b) => a.name > b.name ? 1: -1).map((ingredient) => {
-      return <IngredientItem ingredient={ingredient} key={ingredient.id} />
+      return <IngredientItem ingredient={ingredient} key={ingredient.id} onIngredientClicked={onIngredientClicked}/>
     })
 
     return (
@@ -24,6 +26,7 @@ const IngredientsList = ({ingredients}) => {
         </div>
 
           <div id='spells-container'>
+            {selectedIngredient ? <IngredientSelector selectedIngredient={selectedIngredient}/>:null}
         {IngredientsItems.filter((list) => {
           if (query === "") {
             return list;
