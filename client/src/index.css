@@ -36,9 +36,10 @@ background-attachment: fixed;
 
 * {
     margin: 0px;
+    font-family: 'Aboreto', cursive;
 }
 
-.grid{
+/* .grid{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -58,7 +59,7 @@ background-attachment: fixed;
     opacity: 0.5;
     transition: opacity 0.2s ease;
     transform: scale(1.5);
-}
+} */
 
 #play-button {
     position: absolute;

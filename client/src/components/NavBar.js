@@ -14,9 +14,16 @@ const NavBar = () => {
         }
     }
 
-    // TODO get the spells page to render when selected in the drop down
-    // Then work on rendering the types with a select for each select.
 
+      const ElixirDifficulty = [
+        "Unknown",
+        "Advanced",
+        "Moderate",
+        "Beginner",
+        "OneOfAKind",
+        "OrdinaryWizardingLevel",
+        "",
+      ];
 
     return(
         <nav className='nav-container'>
@@ -29,13 +36,29 @@ const NavBar = () => {
                 <button className='dropdown-button link navbar'>Spells</button>
                     <div className='dropdown-content'>
                         <a href='/spells'>All Spells</a>
+                        <a href='/spells'>Charm</a>
+                        <a href='/spells'>Spell</a>
+                        <a href='/spells'>Healing</a>
+                        <a href='/spells'>Transfiguration</a>
+                        <a href='/spells'>DarkCharm</a>
+                        <a href='/spells'>Jinx</a>
+                        <a href='/spells'>Cures</a>
+                        <a href='/spells'>Magical Transportation</a>
+                        <a href='/spells'>Conjuration</a>
+                        <a href='/spells'>Hex</a>
                     </div>
                 </div>
                 {/* <li id='nav-elixirs'><Link to='/elixirs' className='link'>Elixirs</Link></li> */}
                 <div className='dropdown'>
                 <button className='dropdown-button link navbar'>Elixirs</button>
                     <div className='dropdown-content'>
-                        <a href='/elixirs'>Elixirs</a>
+                        <a href='/elixirs'>All Elixirs</a>
+                        <a href='/elixirs'>Advanced</a>
+                        <a href='/elixirs'>Moderate</a>
+                        <a href='/elixirs'>Average</a>
+                        <a href='/elixirs'>Beginner</a>
+                        <a href='/elixirs'>One of a Kind</a>
+                        <a href='/elixirs'>Unknown</a>
                     </div>
                 </div>
             
