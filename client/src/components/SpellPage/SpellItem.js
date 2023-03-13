@@ -14,10 +14,10 @@ return(
         <b>{spell.name}</b>
         {open &&
         <div>
-        <li><b>INCANTATION </b>{spell.incantation}</li>
-        <li>EFFECT {spell.effect}</li>
-        <li>TYPE {spell.type}</li>
-        <li>LIGHT {spell.light}</li>
+        <li><b>Incantation: </b>{spell.incantation}</li>
+        <li><b>Effect: </b>{spell.effect}</li>
+        <li><b>Type: </b>{spell.type}</li>
+        <li><b>Light: </b>{spell.light}</li>
         </div>
         }
     </div>

@@ -5,14 +5,6 @@ import SpellType from './SpellPage/SpellList';
 
 const NavBar = ({handleSpellChange}) => {
 
-    // const [type, setType] = useState('')
-
-    const handleClick = (e) => {
-        handleSpellChange(e.target.value)
-        // setType(e.target.value)
-        console.log(e.target.value)
-    }
-
     const SpellType = [
         'Charm',
         'Spell',
@@ -39,22 +31,18 @@ const NavBar = ({handleSpellChange}) => {
     //   </div>
 
 
-
 //   fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
 
     return(
         <nav className='nav-container'>
-        
-
-
             <ul className='navbar'>
                 <li id='nav-home'><Link to='/' className='link'>Home</Link></li>
                 <div className='dropdown'>
                 <button className='dropdown-button link navbar'>Spells</button>
                     <div className='dropdown-content'>
-                        {/* <a href='/spells'>All Spells</a> */}
+                        <a href='/spells'>All Spells</a>
                         {SpellType.map((SpellType) => {
-                          return(<a href='/spells' value={SpellType} key={SpellType} onClick={handleClick}>{SpellType}</a>)
+                          return(<a href='/spells' value={SpellType} key={SpellType}>{SpellType}</a>)
                         })}
                     </div>
                 </div>

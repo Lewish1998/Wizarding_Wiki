@@ -19,7 +19,7 @@ const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient,eli
         <div className="flex-center-top">
           <input
             className='search'
-            autocapitalize="word"
+            autoCapitalize="word"
             type={"text"}
             placeholder="Search Here"
             onChange={(event) => setQuery(event.target.value)}
