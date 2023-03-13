@@ -2,7 +2,8 @@ import '../Style/Spells.css'
 import { useState } from "react";
 import SpellItem from "./SpellItem"
 
-const SpellList = ({spells, handleSpellChange}) => {
+
+const SpellList = ({spells, handleSpellChange, charm}) => {
 
   const SpellType = [
     'Charm',
@@ -11,7 +12,7 @@ const SpellList = ({spells, handleSpellChange}) => {
     'Transfiguration',
     'DarkCharm',
     'Jinx',
-    'Cures',
+    // 'Curses',
     'MagicalTransportation',
     'Conjuration',
     'Hex'
@@ -30,16 +31,15 @@ const SpellList = ({spells, handleSpellChange}) => {
       handleSpellChange(e.target.value)
       setType(e.target.value)
       console.log(`Type: ${type}`)
-
+      console.log(charm)
     }
-
-
 
     return (
       <div className='search-bar-container'>
         <h1 className='spell-heading'>Spells</h1>
-        <div className="flex-center-top">
+        <div className="flex-search">
           <input
+            className='search'
             type={"text"}
             placeholder="Search Here"
             onChange={(event) => setQuery(event.target.value)}
@@ -69,21 +69,6 @@ const SpellList = ({spells, handleSpellChange}) => {
         })}
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-      
-        // <div>
-        // <h1>Spells</h1>
-        // <p>Will take in spells as a paramater and create and return a variable which will return mapped spells</p>
-        // <div id='spell-items'>{SpellsItems}</div>
-        // </div>
     )
 }
 

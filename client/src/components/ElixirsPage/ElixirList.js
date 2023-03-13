@@ -39,6 +39,8 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
       <div className="flex-center-top">
         <input
           autoCapitalize="word"
+          className='search'
+
           type={"text"}
           placeholder="Search Here"
           onChange={(event) => setQuery(event.target.value)}

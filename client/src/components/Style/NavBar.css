@@ -19,6 +19,12 @@
 .navbar>li:hover{
     transform:scale(120%);
 }
+.navbar>button{
+    transition: 600ms;
+}
+.navbar>button:hover{
+    transform:scale(120%);
+}
 
 .link {
     color: rgba(255, 255, 255, 0.6);
@@ -27,4 +33,43 @@
 
 .link:hover {
     color:rgb(217, 255, 156);
+}
+
+.dropdown-button {
+    background-color: rgba(0,0,0,0);
+    padding: 15px;
+    border: none;
+    text-decoration: underline;
+}
+.dropdown {
+    display: inline-block;
+    transition: 600ms;
+}
+.dropdown-content {
+    display: none;
+    position:absolute;
+    z-index: 1;
+    transition: 600ms;
+}
+.dropdown-content a {
+    color: rgba(255, 255, 255, 0.6);
+    display: block;
+    transition: 600ms;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+    background-color: rgba(0,0,0,0.8);
+    padding: 50px;
+    border-radius: 40px;
+
+
+}
+.dropdown-button:hover{
+    transform:scale(120%);
+}
+
+.dropdown-content a:hover {
+    color:rgb(217, 255, 156);
+    transform:scale(105%);
+
 }
