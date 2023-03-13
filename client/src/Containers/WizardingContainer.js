@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React from 'react';
 import {useState, useEffect} from 'react';
+import HousesList from '../components/HousesPage/HousesList';
 
 import ElixirsList from '../Components/ElixirsPage/ElixirList';
 import NavBar from '../Components/NavBar';
@@ -23,15 +24,21 @@ const [ingredients, setIngredients] = useState([])
 const [selectedElixir,setSelectedElixir]=useState([])
 const [selectedSpellType, setSelectedSpellType] = useState([])
 
+
+const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses'
+
 const handleSelectedElixir = elixir =>{
   setSelectedElixir(elixir)
 }
 
+
+const [houses, setHouses] = useState([]);
+
 useEffect(() => {
   getSpells();
+  getHouses();
   getElixirs(elixirsAPI)
   getIngredients()
-
 }, [])
 
 const getSpells = () => {
@@ -83,6 +90,14 @@ const handleSpellChange = (type) => {
   setSelectedSpellType(type)
 }
 
+const getHouses = () => {
+  fetch(housesAPI)
+  .then(res =>res.json())
+  .then((data) =>{
+    setHouses(data)
+  })
+}
+
     return(
         <Router>
             <NavBar/>
@@ -91,7 +106,7 @@ const handleSpellChange = (type) => {
                 <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} />}/>
                 <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs} handleElixirChanges={handleElixirChanges}/>}/>
                 <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
-                {/* <Route exact path='/houses' element={<HousesList houses={houses}/>}/> */}
+                <Route exact path='/houses' element={<HousesList houses={houses}/>}/>
             </Routes>
         </Router>
     )
