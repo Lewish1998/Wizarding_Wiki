@@ -15,7 +15,7 @@ const HousesList = ({houses}) => {
     <div>
         <h1>Houses:</h1>
         <HouseSelector houses={houses} onHouseSelected={onHouseSelected}/>
-        {selectedHouse ? <HouseDetails house={selectedHouse} /> : null}
+        {selectedHouse ? <HouseDetails house={selectedHouse} /> : <img src='./HogwartsCOA.png'/>}
     </div>
     )
 };

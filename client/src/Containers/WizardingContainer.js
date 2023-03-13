@@ -52,8 +52,8 @@ const getHouses = () => {
             <Routes>
             <Route  exact path='/' element={<Home />}/>
                 <Route exact path='/spells' element={<SpellList spells={spells}/>}/>
-                {/* <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs}/>}/> */}
-                {/* <Route exact path='/ingredients' element={<IngredientslList ingredients={ingredients}/>}/> */}
+                <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs}/>}/>
+                <Route exact path='/ingredients' element={<IngredientslList ingredients={ingredients}/>}/>
                 <Route exact path='/houses' element={<HousesList houses={houses}/>}/></Routes>
         </Router>
     )
