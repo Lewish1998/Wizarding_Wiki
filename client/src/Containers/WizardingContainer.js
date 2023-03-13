@@ -22,8 +22,8 @@ const [spells, setSpells] = useState([]);
 const [elixirs,setElixirs] =useState([])
 const [ingredients, setIngredients] = useState([])
 const [selectedElixir,setSelectedElixir]=useState([])
-
 const [selectedSpellType, setSelectedSpellType] = useState([])
+
 
 const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses'
 
@@ -73,15 +73,12 @@ const getSelectedElixirs = (difficulty) =>{
     setElixirs(data)
   })
 }
-const handleElixirChanges = difficulty =>{
-  getSelectedElixirs(difficulty)
-}
 
 const getSelectedSpells = (type) =>{
   fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
   .then(result =>result.json())
   .then((data)=>{
-    setSpells(data)
+    setSelectedSpellType(data)
   })
 }
 
@@ -90,7 +87,7 @@ const handleElixirChanges = difficulty =>{
 }
 
 const handleSpellChange = (type) => {
-  getSelectedSpells(type)
+  setSelectedSpellType(type)
 }
 
 const getHouses = () => {
