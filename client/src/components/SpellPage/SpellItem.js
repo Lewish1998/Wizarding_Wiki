@@ -1,10 +1,15 @@
+import '../Style/Spells.css'
 
 const SpellItem = ({spell}) => {
   
 
 return(
     <div id="spell-item">
-        {spell.name}
+        <li>{spell.name}</li>
+        <li><b>INCANTATION </b>{spell.incantation}</li>
+        <li>EFFECT {spell.effect}</li>
+        <li>TYPE {spell.type}</li>
+        <li>LIGHT {spell.light}</li>
     </div>
 )
 }

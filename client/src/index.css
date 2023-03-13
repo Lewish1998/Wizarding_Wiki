@@ -26,13 +26,55 @@ font-family: 'Yuji Boku', serif; */
 
 
 body{
-background-image: linear-gradient(red, blue);
+background-image: linear-gradient(black, green);
 background-image: url('./Components/images/bridge.jpg');
 background-size: 2000px;
 background-repeat: no-repeat;
 min-height: 1000px;
+background-attachment: fixed;
 }
 
 * {
     margin: 0px;
+}
+
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+}
+.grid-item {
+    height: 60px;
+    width: 60px;
+    background-color: rgb(153, 254, 176);
+    opacity: 0;
+    transition: opacity 2s ease 0.4s, transform 0.8s ease;
+    transform: scale(1);
+    border-radius: 100px;
+}
+
+.grid-item:hover {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+    transform: scale(1.5);
+}
+
+#play-button {
+    position: absolute;
+    background-image: url(./theme/deathly-hallows.png);
+    background-color: rgba(0,0,0,0);
+    background-repeat: no-repeat;
+    background-size: 80px;
+    height: 80px;
+    width: 80px;
+    border: 0;
+    top: 5px;
+    left: 5px;
+    opacity: 0;
+    transition: 3s;
+}
+
+#play-button:hover {
+    opacity: 0.8;
 }
