@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Style/Spells.css'
 
 const HouseDetails = ({house}) => {
 
@@ -7,7 +8,7 @@ const HouseDetails = ({house}) => {
     })
     
     return (
-    <div>
+    <div id='spell-item'>
         <p>Name: {house.name}</p>
         <p>Head of House: {house.heads[0]['firstName']} {house.heads[0]['lastName']} </p>
         <p>House Colours: {house.houseColours}</p>

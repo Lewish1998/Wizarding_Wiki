@@ -12,7 +12,7 @@ const HousesList = ({houses}) => {
     }
 
     return (
-    <div>
+    <div >
         <h1>Houses:</h1>
         <HouseSelector houses={houses} onHouseSelected={onHouseSelected}/>
         {selectedHouse ? <HouseDetails house={selectedHouse} /> : <img require src={require('./HogwartsCOA.png')}/>}
