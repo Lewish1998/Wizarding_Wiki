@@ -6,8 +6,8 @@ import ElixirsList from '../Components/ElixirsPage/ElixirList';
 import NavBar from '../Components/NavBar';
 import Home from '../Components/Home';
 import SpellList from '../Components/SpellPage/SpellList';
-import IngredientsList from '../Components/IngredientsPage/IngredientsList'
-import HousesList from '../Components/HousesPage/HousesList'
+import IngredientsList from '../Components/IngredientsPage/IngredientsList';
+import HousesList from '../Components/HousesPage/HousesList';
 
 //APIS
 //Spells
