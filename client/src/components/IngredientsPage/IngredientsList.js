@@ -3,10 +3,9 @@ import IngredientItem from "./IngredientsItem";
 import IngredientSelector from "./IngredientsSelected";
 
 
-const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient}) => {
+const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient,elixirsWithIngredients}) => {
 
   const [query, setQuery] = useState("");
-
 
 
     const IngredientsItems = ingredients.sort((a,b) => a.name > b.name ? 1: -1).map((ingredient) => {
@@ -26,7 +25,7 @@ const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient}) =
         </div>
 
           <div id='spells-container'>
-            {selectedIngredient ? <IngredientSelector selectedIngredient={selectedIngredient}/>:null}
+            {selectedIngredient ? <IngredientSelector selectedIngredient={selectedIngredient} elixirsWithIngredients={elixirsWithIngredients}/>:null}
         {IngredientsItems.filter((list) => {
           if (query === "") {
             return list;
