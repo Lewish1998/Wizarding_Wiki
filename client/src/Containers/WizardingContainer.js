@@ -67,12 +67,20 @@ const getSelectedElixirs = (difficulty) =>{
   })
 }
 
+const getSelectedSpells = (type) =>{
+  fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
+  .then(result =>result.json())
+  .then((data)=>{
+    setSpells(data)
+  })
+}
+
 const handleElixirChanges = difficulty =>{
   getSelectedElixirs(difficulty)
 }
 
 const handleSpellChange = (type) => {
-  setSelectedSpellType(type)
+  getSelectedSpells(type)
 }
 
     return(
@@ -80,7 +88,7 @@ const handleSpellChange = (type) => {
             <NavBar/>
           <Routes>
             <Route  exact path='/' element={<Home />}/>
-                <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange}/>}/>
+                <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} />}/>
                 <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs} handleElixirChanges={handleElixirChanges}/>}/>
                 <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients}/>}/>
                 {/* <Route exact path='/houses' element={<HousesList houses={houses}/>}/> */}

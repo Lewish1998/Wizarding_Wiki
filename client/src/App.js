@@ -1,3 +1,4 @@
+import './index.css'
 import WizardingContainer from "./Containers/WizardingContainer"
 import sound from './theme/theme.mp3'
 import { useEffect, useState } from "react"
@@ -10,7 +11,7 @@ const App = () => {
 
     return(
         <div>
-            <button onClick={play}>play</button>
+            <button id="play-button" onClick={play}></button>
             <WizardingContainer/>
         </div>
     )
