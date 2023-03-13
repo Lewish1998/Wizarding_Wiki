@@ -5,11 +5,11 @@ import SpellType from './SpellPage/SpellList';
 
 const NavBar = ({handleSpellChange}) => {
 
-    const [type, setType] = useState('')
+    // const [type, setType] = useState('')
 
     const handleClick = (e) => {
         handleSpellChange(e.target.value)
-        setType(e.target.value)
+        // setType(e.target.value)
         console.log(e.target.value)
     }
 

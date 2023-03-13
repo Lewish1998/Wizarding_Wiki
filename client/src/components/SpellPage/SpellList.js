@@ -37,8 +37,9 @@ const SpellList = ({spells, handleSpellChange, charm}) => {
     return (
       <div className='search-bar-container'>
         <h1 className='spell-heading'>Spells</h1>
-        <div className="flex-center-top">
+        <div className="flex-search">
           <input
+            className='search'
             type={"text"}
             placeholder="Search Here"
             onChange={(event) => setQuery(event.target.value)}
@@ -68,21 +69,6 @@ const SpellList = ({spells, handleSpellChange, charm}) => {
         })}
         </div>
       </div>
-
-
-
-
-
-
-
-
-
-      
-        // <div>
-        // <h1>Spells</h1>
-        // <p>Will take in spells as a paramater and create and return a variable which will return mapped spells</p>
-        // <div id='spell-items'>{SpellsItems}</div>
-        // </div>
     )
 }
 
