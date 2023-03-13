@@ -22,23 +22,12 @@ const IngredientsList = ({ingredients}) => {
             onChange={(event) => setQuery(event.target.value)}
           />
         </div>
-{/*   <div className="flex-center-top">
-        <select onChange={handleChange}>
-          {ElixirDifficulty.map((difficulty) => {
-            return (
-              <option key={difficulty} value={difficulty}>
-                {difficulty}
-              </option>
-            );
-          })}
-        </select>
-        </div> */}
 
           <div id='spells-container'>
         {IngredientsItems.filter((list) => {
           if (query === "") {
             return list;
-          } else if (list.props.ingredient.name.includes(query)) {
+          } else if (list.props.ingredient.name.toLowerCase().includes(query.toLowerCase())) {
             return list;
           }
         })}
