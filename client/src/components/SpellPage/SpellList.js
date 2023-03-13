@@ -40,7 +40,6 @@ const SpellList = ({spells, handleSpellChange}) => {
         <h1 className='spell-heading'>Spells</h1>
         <div className="flex-center-top">
           <input
-            autoCapitalize="word"
             type={"text"}
             placeholder="Search Here"
             onChange={(event) => setQuery(event.target.value)}
@@ -64,7 +63,7 @@ const SpellList = ({spells, handleSpellChange}) => {
         {SpellsItems.filter((list) => {
           if (query === "") {
             return <ul id='list-item'>list</ul>;
-          } else if (list.props.spell.name.includes(query)) {
+          } else if (list.props.spell.name.toLowerCase().includes(query.toLowerCase())) {
             return <ul>list</ul>;
           }
         })}

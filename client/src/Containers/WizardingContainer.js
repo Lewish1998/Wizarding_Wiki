@@ -1,13 +1,13 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React from 'react';
 import {useState, useEffect} from 'react';
-import HousesList from '../components/HousesPage/HousesList';
 
 import ElixirsList from '../Components/ElixirsPage/ElixirList';
 import NavBar from '../Components/NavBar';
 import Home from '../Components/Home';
 import SpellList from '../Components/SpellPage/SpellList';
 import IngredientsList from '../Components/IngredientsPage/IngredientsList'
+import HousesList from '../Components/HousesPage/HousesList'
 
 //APIS
 //Spells
@@ -78,7 +78,7 @@ const getSelectedSpells = (type) =>{
   fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
   .then(result =>result.json())
   .then((data)=>{
-    setSelectedSpellType(data)
+    setSpells(data)
   })
 }
 
@@ -87,7 +87,7 @@ const handleElixirChanges = difficulty =>{
 }
 
 const handleSpellChange = (type) => {
-  setSelectedSpellType(type)
+  getSelectedSpells(type)
 }
 
 const getHouses = () => {
