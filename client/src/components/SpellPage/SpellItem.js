@@ -11,13 +11,13 @@ const SpellItem = ({spell}) => {
 
 return(
     <div id="spell-item" onClick={toggle}>
-        <b>{spell.name}</b>
+        <h3>{spell.name}</h3>
         {open &&
-        <div>
-        <li><b>INCANTATION </b>{spell.incantation}</li>
-        <li>EFFECT {spell.effect}</li>
-        <li>TYPE {spell.type}</li>
-        <li>LIGHT {spell.light}</li>
+        <div id='spell-item-box'>
+        <li><b>Incantation: </b>{spell.incantation}</li>
+        <li><b>Effect: </b>{spell.effect}</li>
+        <li><b>Type: </b>{spell.type}</li>
+        <li><b>Light: </b>{spell.light}</li>
         </div>
         }
     </div>
