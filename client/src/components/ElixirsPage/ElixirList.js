@@ -62,7 +62,7 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
       {ElixirItems.filter((list) => {
         if (query === "") {
           return <ul id='list-item'>list</ul>;
-        } else if (list.props.elixir.name.includes(query)) {
+        } else if (list.props.elixir.name.toLowerCase().includes(query.toLowerCase())) {
           return <ul>list;</ul>
         }
       })}
