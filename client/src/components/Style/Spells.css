@@ -66,3 +66,15 @@
     margin-right: auto;
     width: 40%;
 }
+
+.top-left{
+    position:absolute;
+    top:20%;
+    left: 17px;
+}
+
+.top-right{
+    position: absolute;
+    top: 8px;
+    right: 0%;
+}
