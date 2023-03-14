@@ -1,5 +1,4 @@
 const IngredientSelector = ({ selectedIngredient, elixirsWithIngredients }) => {
-  console.log(elixirsWithIngredients);
 
   const ElixirsWithIngredientsItems = elixirsWithIngredients.map((elixir) => {
     return (
