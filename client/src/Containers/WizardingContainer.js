@@ -109,10 +109,10 @@ const getHouses = () => {
 
     return(
         <Router>
-            <NavBar spells={spells} handleSpellChange={handleSpellChange}/>
+            <NavBar spells={spells} handleSpellChange={handleSpellChange} getSelectedElixirs={getSelectedElixirs}/>
           <Routes>
                 <Route exact path='/' element={<Home />}/>
-                <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} />}/>
+                <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} handleElixirChanges={handleElixirChanges} />}/>
                 <Route exact path='/elixirs' element={<ElixirsList elixirs={elixirs} handleElixirChanges={handleElixirChanges}/>}/>
                 <Route exact path='/ingredients' element={<IngredientsList ingredients={ingredients} onIngredientClicked={onIngredientClicked} selectedIngredient={selectedIngredient} elixirsWithIngredients={elixirsWithIngredients} />}/>
                 <Route exact path='/houses' element={<HousesList houses={houses}/>}/>

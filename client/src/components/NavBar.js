@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, redirect } from 'react-router-dom';
 import SpellType from './SpellPage/SpellList';
 
-const NavBar = ({handleSpellChange}) => {
+const NavBar = ({handleSpellChange, handleElixirChanges}) => {
 
     const SpellType = [
         'Charm',
@@ -12,11 +12,20 @@ const NavBar = ({handleSpellChange}) => {
         'Transfiguration',
         'DarkCharm',
         'Jinx',
-        // 'Cures',
+        'Curse',
         'MagicalTransportation',
         'Conjuration',
         'Hex'
       ]
+      const ElixirDifficulty = [
+        "Unknown",
+        "Advanced",
+        "Moderate",
+        "Beginner",
+        "OneOfAKind",
+        "OrdinaryWizardingLevel",
+        "",
+      ];
 
     //   <div className='flex-center-top'>
     //   <select onChange={handleChange}>
@@ -33,6 +42,14 @@ const NavBar = ({handleSpellChange}) => {
 
 //   fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
 
+const handleChange = (e) => {
+      handleSpellChange(e.target.text)
+    console.log(e)}
+
+    const handleElixirChange = (e) => {
+        handleElixirChanges(e.target.text)
+      console.log(e)}
+
     return(
         <nav className='nav-container'>
             <ul className='navbar'>
@@ -43,7 +60,7 @@ const NavBar = ({handleSpellChange}) => {
                     <Link to='/spells' className='link'>All Spells</Link>
                         {SpellType.map((SpellType) => {
                           return(
-                          <Link to='/spells' className='link' key={SpellType}>{SpellType}</Link>
+                          <Link to='/spells' className='link' key={SpellType} value={SpellType} onClick={handleChange}>{SpellType}</Link>
                           )
                         })}
                     </div>
@@ -55,13 +72,19 @@ const NavBar = ({handleSpellChange}) => {
                 <div className='dropdown'>
                 <button className='dropdown-button link navbar'>Elixirs</button>
                     <div className='dropdown-content'>
-                        <a href='/elixirs'>All Elixirs</a>
-                        <a href='/elixirs'>Advanced</a>
-                        <a href='/elixirs'>Moderate</a>
-                        <a href='/elixirs'>Average</a>
-                        <a href='/elixirs'>Beginner</a>
-                        <a href='/elixirs'>One of a Kind</a>
-                        <a href='/elixirs'>Unknown</a>
+                    <Link to='/elixirs' className='link'>All Elixirs</Link>
+                        {ElixirDifficulty.map((difficulty) => {
+                          return(
+                          <Link to='/elixirs' className='link' key={difficulty} value={difficulty} onClick={handleElixirChange}>{difficulty}</Link>
+                          )
+                        })}
+                        {/* // <a href='/elixirs'>All Elixirs</a>
+                        // <a href='/elixirs'>Advanced</a>
+                        // <a href='/elixirs'>Moderate</a>
+                        // <a href='/elixirs'>Average</a>
+                        // <a href='/elixirs'>Beginner</a>
+                        // <a href='/elixirs'>One of a Kind</a>
+                        // <a href='/elixirs'>Unknown</a> */}
                     </div>
                 </div>
             
