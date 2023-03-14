@@ -10,9 +10,6 @@ const HouseDetails = ({house}) => {
     return (
     <div >
         <h1><u>{house.name}</u></h1>
-
-        {house.name='gryffindor' ? <img require src={require('./gryffindor.png')}/>: <p>haloo</p>}
-        
         <div id='spell-item'>
         <p>One of the four founding houses of Hogwarts initially sponsored by {house.founder}.</p>
         <p>The students of this house continue to embody the traits of {houstTraits} that they were known for.</p>
@@ -20,7 +17,7 @@ const HouseDetails = ({house}) => {
         <p>The current head of house is {house.heads[0]['firstName']} {house.heads[0]['lastName']} and the common room in the  {house.commonRoom} is watched over by the ghost  {house.ghost}. 
         </p>
         </div>
-
+        {house ? <img require src={require(`./${house.name.toLowerCase()}.png`)}/> : null}
     </div>
     )
 };
