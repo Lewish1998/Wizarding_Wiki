@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, redirect } from 'react-router-dom';
 import SpellType from './SpellPage/SpellList';
 
-const NavBar = ({handleSpellChange, handleElixirChanges}) => {
+const NavBar = ({handleSpellChange, getSelectedElixirs}) => {
 
     const SpellType = [
         'Charm',
@@ -47,7 +47,7 @@ const handleChange = (e) => {
     console.log(e)}
 
     const handleElixirChange = (e) => {
-        handleElixirChanges(e.target.text)
+        getSelectedElixirs(e.target.text)
       console.log(e)}
 
     return(
