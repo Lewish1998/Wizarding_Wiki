@@ -10,8 +10,7 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
     "Moderate",
     "Beginner",
     "OneOfAKind",
-    "OrdinaryWizardingLevel",
-    "",
+    "OrdinaryWizardingLevel"
   ];
   //   const difficultySelecter = () => {
   //     elixirs.forEach((elixir) => {

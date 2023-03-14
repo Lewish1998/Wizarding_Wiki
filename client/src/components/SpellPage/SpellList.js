@@ -12,7 +12,7 @@ const SpellList = ({spells, handleSpellChange}) => {
     'Transfiguration',
     'DarkCharm',
     'Jinx',
-    // 'Curses',
+    'Curse',
     'MagicalTransportation',
     'Conjuration',
     'Hex'

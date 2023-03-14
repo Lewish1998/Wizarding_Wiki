@@ -67,8 +67,8 @@ const getIngredients = () => {
   });
 };
   
-const getElixirs = (url) =>{
-  fetch(url)
+const getElixirs = () =>{
+  fetch(elixirsAPI)
   .then(result =>result.json())
   .then((data)=>{
     setElixirs(data)
@@ -109,7 +109,7 @@ const getHouses = () => {
 
     return(
         <Router>
-            <NavBar spells={spells} handleSpellChange={handleSpellChange} getSelectedElixirs={getSelectedElixirs}/>
+            <NavBar spells={spells} handleSpellChange={handleSpellChange} getSelectedElixirs={getSelectedElixirs} getSpells={getSpells} getElixirs={getElixirs}/>
           <Routes>
                 <Route exact path='/' element={<Home />}/>
                 <Route exact path='/spells' element={<SpellList spells={spells} handleSpellChange={handleSpellChange} handleElixirChanges={handleElixirChanges} />}/>
