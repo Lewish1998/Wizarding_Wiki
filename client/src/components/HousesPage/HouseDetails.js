@@ -1,5 +1,6 @@
 import React from 'react';
-import '../Style/Spells.css'
+import '../Style/Spells.css';
+import '../Style/House.css'
 
 const HouseDetails = ({house}) => {
 
@@ -19,7 +20,7 @@ const HouseDetails = ({house}) => {
         </p>
         </div>
     </div>
-    {house ? <img className='top-right' require src={require(`./${house.name.toLowerCase()}.png`)}/> : null}
+    {house ? <img className='top-right' require src={require(`./houseImages/${house.name.toLowerCase()}.png`)}/> : null}
     </div>
     )
 };

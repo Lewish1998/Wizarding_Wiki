@@ -14,7 +14,7 @@ const HouseSelector = ({houses, onHouseSelected}) => {
     return (
         <select defaultValue='' onChange={handleChange}>
             <option value=''>Select House</option>
-            {houseOptions}
+                {houseOptions}
         </select>
     )
 };

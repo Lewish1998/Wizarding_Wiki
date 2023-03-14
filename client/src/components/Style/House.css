@@ -1,0 +1,15 @@
+.top-right {
+    height: 100%;
+    position: absolute;
+    top: 80px;
+    right: 0px;
+    opacity: 0.95;
+}
+
+#house-item {
+    height: 10px;
+}
+
+.house-text {
+    color: red;
+}
