@@ -4,8 +4,7 @@ import HousesItem from './HousesItem';
 const HouseSelector = ({houses, onHouseSelected}) => {
 
     const handleChange = (event) => {
-        const chosenHouse = houses[event.target.value]
-        onHouseSelected(chosenHouse);
+        onHouseSelected(houses[event.target.value]);
     }
 
     const houseOptions = houses.map((house, index) => {
