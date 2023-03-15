@@ -6,7 +6,7 @@
     opacity: 0.95;
     background-attachment: fixed;
     background-repeat: repeat;
-
+    z-index: -100000;
 }
 
 #house-item {
@@ -25,4 +25,13 @@
 .select-padding {
     padding: 40px;
     padding-bottom: 20px;
+}
+
+select {
+    z-index: 10000000;
+}
+
+#text-box-house {
+    width: 50vw;
+
 }
