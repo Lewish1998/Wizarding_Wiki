@@ -1,7 +1,7 @@
+import '../theme/container.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import React from 'react';
 import {useState, useEffect} from 'react';
-
 import ElixirsList from '../Components/ElixirsPage/ElixirList';
 import NavBar from '../Components/NavBar';
 import Home from '../Components/Home';
@@ -107,7 +107,17 @@ const getHouses = () => {
   })
 }
 
+let circle = document.getElementById('blob');
+const onMouseMove = (e) =>{
+  circle.style.left = e.pageX + 'px';
+  circle.style.top = e.pageY + 'px';
+}
+document.addEventListener('mousemove', onMouseMove);
+
+
     return(
+      <div>
+        <div id='blob'></div>
         <Router>
             <NavBar spells={spells} handleSpellChange={handleSpellChange} getSelectedElixirs={getSelectedElixirs} getSpells={getSpells} getElixirs={getElixirs}/>
           <Routes>
@@ -118,6 +128,7 @@ const getHouses = () => {
                 <Route exact path='/houses' element={<HousesList houses={houses}/>}/>
             </Routes>
         </Router>
+        </div>
     )
 }
 

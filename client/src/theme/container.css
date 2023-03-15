@@ -1,0 +1,15 @@
+#blob {
+  background-color: white;
+  height:400px;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: radial-gradient(rgb(255, 255, 255), rgba(253, 255, 142, 0.735), rgba(255, 187, 69, 0.626));
+  animation: rotate 20s infinite;
+  opacity: 0.5;
+  z-index: -10;
+  filter: blur(50px);
+}
