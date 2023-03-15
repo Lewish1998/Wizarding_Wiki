@@ -91,5 +91,28 @@
     text-align: center;
     position: -webkit-sticky; /* Safari */
     position: sticky;
-    top: 0;
+    top: 20px;
+;
+}
+
+li{
+    list-style: none
+}
+
+.big-grid{
+    display: grid;
+    grid-template-columns: 1fr 2fr
+}
+
+.selected-ingredient{
+    margin: 5%;
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
+}
+
+.all-ingredients{
+    display: grid;
+    grid-template-columns: 1fr 1fr
 }
