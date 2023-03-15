@@ -115,7 +115,9 @@ document.addEventListener('mousemove', onMouseMove);
 
     return(
       <div>
-        <div id='blob'></div>
+        <div id='blob'>
+          <div id='test-div'></div>
+        </div>
         <Router>
             <NavBar spells={spells} handleSpellChange={handleSpellChange} getSelectedElixirs={getSelectedElixirs} getSpells={getSpells} getElixirs={getElixirs}/>
           <Routes>
