@@ -27,7 +27,7 @@ const HouseSelector = ({houses, onHouseSelected}) => {
 
     return (
         <div className="flex-center-top select-padding">
-        <select  defaultValue='' onChange={handleChange}>
+        <select className='select-padding' defaultValue='' onChange={handleChange}>
             <option value=''>Select House</option>
                 {houseOptions}
         </select>
