@@ -20,6 +20,7 @@ const HouseDetails = ({house}) => {
         </div>
     </div>
     {house ? <img className='top-right' require src={require(`./houseImages/${house.name.toLowerCase()}.png`)}/> : null}
+    <div id='image-shadow'></div>
     </div>
     )
 };
