@@ -30,7 +30,6 @@ const SpellList = ({spells, handleSpellChange}) => {
     const handleChange = (e) => {
       handleSpellChange(e.target.value)
       setType(e.target.value)
-      console.log(`Type: ${type}`)
     }
 
     return (

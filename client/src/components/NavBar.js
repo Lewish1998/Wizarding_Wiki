@@ -26,19 +26,6 @@ const NavBar = ({ handleSpellChange, getSelectedElixirs, getSpells, getElixirs})
     "",
   ];
 
-  //   <div className='flex-center-top'>
-  //   <select onChange={handleChange}>
-  //     {SpellType.map((SpellType) => {
-  //       return (
-  //         <option key={SpellType} value={SpellType}>
-  //           {SpellType}
-  //         </option>
-  //       );
-  //     })}
-  //   </select>
-  //   </div>
-
-  //   fetch("https://wizard-world-api.herokuapp.com/Spells?Type="+type)
 
   const handleChange = (e) => {
     handleSpellChange(e.target.text);

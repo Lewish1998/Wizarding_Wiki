@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import HousesItem from './HousesItem';
-// import G from '../../theme/Gryffindor.mp3'
-// import R from '../../theme/Ravenclaw.mp3'
-// import H from '../../theme/Hufflepuff.mp3'
-// import S from '../../theme/Slytherin.mp3'
-// import sound from '../../theme/theme.mp3'
 
 
 const HouseSelector = ({houses, onHouseSelected}) => {

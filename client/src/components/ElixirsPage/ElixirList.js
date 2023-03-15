@@ -12,15 +12,6 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
     "OneOfAKind",
     "OrdinaryWizardingLevel"
   ];
-  //   const difficultySelecter = () => {
-  //     elixirs.forEach((elixir) => {
-  //       if (!ElixirDifficulty.includes(elixir.difficulty)) {
-  //         let { difficulty } = elixir;
-  //         ElixirDifficulty.push(difficulty);
-  //       }
-  //     });
-  //   };
-  //   difficultySelecter();
 
   const ElixirItems = elixirs.map((elixir) => {
     return <ElixirItem elixir={elixir} key={elixir.id} />;
