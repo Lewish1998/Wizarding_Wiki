@@ -12,4 +12,5 @@
   opacity: 0.5;
   z-index: -10;
   filter: blur(50px);
+  transition-duration:200ms;
 }
