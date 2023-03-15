@@ -12,6 +12,7 @@
 
 .main-heading {
     font-size: max(13vw, 70px);
+    
 }
 
 .home-page-content, .text{
@@ -44,4 +45,9 @@
   to {
     background-position: 200% center;
   }
+}
+
+.heading {
+  filter: drop-shadow(80px 100px 8px rgba(0,0,0,0.2));
+  z-index: -2;
 }

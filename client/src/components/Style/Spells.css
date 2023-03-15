@@ -27,7 +27,7 @@
     transform: scale(115%);
     background-color: rgba(0,0,0,0.4);
     box-shadow:0px 0px 25px rgb(217, 255, 156);
-
+    cursor: pointer;
 }
 
 .spell-heading {
@@ -145,4 +145,8 @@ ul {
     height: 100px;
     cursor:pointer;
     overflow-y: auto;
+}
+
+button {
+    cursor: pointer;
 }
