@@ -12,13 +12,11 @@ const HousesList = ({houses}) => {
         setSelectedHouse(house)
     }
 
-    console.log(selectedHouse)
-
     return (
     <div >
-        <h1>Houses:</h1>
-        <HouseSelector houses={houses} onHouseSelected={onHouseSelected}/>
-        {selectedHouse ? <HouseDetails house={selectedHouse} /> : <img className='parent-crest' require src={require('./HogwartsCOA.png')} />}
+        <h1 className='spell-heading'>Houses</h1>
+        <HouseSelector className='house-wdropdown' houses={houses} onHouseSelected={onHouseSelected}/>
+        {selectedHouse ? <HouseDetails house={selectedHouse} /> : <img className='parent-crest' require src={require('./houseImages/HogwartsCOA.png')} />}
     </div>
     )
 };
