@@ -44,19 +44,6 @@ const SpellList = ({spells, handleSpellChange}) => {
             placeholder="Search Here"
             onChange={(event) => setQuery(event.target.value)}
           />
-
-      {/* drop down spell type */}
-        </div>
-        <div className='flex-center-top'>
-        <select onChange={handleChange}>
-          {SpellType.map((SpellType) => {
-            return (
-              <option key={SpellType} value={SpellType}>
-                {SpellType}
-              </option>
-            );
-          })}
-        </select>
         </div>
 
           {/* filtered search results */}

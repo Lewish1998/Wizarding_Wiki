@@ -1,12 +1,10 @@
 .top-right {
-    height: 100%;
+    z-index: -1;
+    height: 50%;
     position: absolute;
     top: 80px;
-    right: 0px;
-    opacity: 0.95;
-    background-attachment: fixed;
-    background-repeat: repeat;
-    z-index: -100000;
+    right: 50px;
+    opacity: 0.8;
 }
 
 #house-item {
@@ -28,7 +26,7 @@
 }
 
 select {
-    z-index: 10000000;
+    z-index: 1;
 }
 
 #text-box-house {
