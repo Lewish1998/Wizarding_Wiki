@@ -13,7 +13,7 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
     "OrdinaryWizardingLevel"
   ];
 
-  const ElixirItems = elixirs.map((elixir) => {
+  const ElixirItems = elixirs.sort((a,b) => a.name > b.name ? 1: -1).map((elixir) => {
     return <ElixirItem elixir={elixir} key={elixir.id} />;
   });
   const handleChange = (event) => {
