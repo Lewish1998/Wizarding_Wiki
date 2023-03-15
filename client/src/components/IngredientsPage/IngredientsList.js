@@ -27,6 +27,7 @@ const IngredientsList = ({ingredients,onIngredientClicked,selectedIngredient,eli
         </div>
 
           <div id='spells-container'>
+            
             {selectedIngredient ? <IngredientSelector selectedIngredient={selectedIngredient} elixirsWithIngredients={elixirsWithIngredients} />:null}
         {IngredientsItems.filter((list) => {
           if (query === "") {
