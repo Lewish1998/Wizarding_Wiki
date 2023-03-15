@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import { Link, redirect } from "react-router-dom";
 import SpellType from "./SpellPage/SpellList";
 
-const NavBar = ({ handleSpellChange, getSelectedElixirs, getSpells, getElixirs}) => {
+const NavBar = ({
+  handleSpellChange,
+  getSelectedElixirs,
+  getSpells,
+  getElixirs,
+}) => {
   const SpellType = [
     "Charm",
     "Spell",
@@ -26,7 +31,6 @@ const NavBar = ({ handleSpellChange, getSelectedElixirs, getSpells, getElixirs})
     "",
   ];
 
-
   const handleChange = (e) => {
     handleSpellChange(e.target.text);
   };
@@ -39,9 +43,9 @@ const NavBar = ({ handleSpellChange, getSelectedElixirs, getSpells, getElixirs})
     getSelectedElixirs(e.target.text);
   };
 
-  const handleAllElixirChange = ()=>{
-    getElixirs()
-  }
+  const handleAllElixirChange = () => {
+    getElixirs();
+  };
 
   return (
     <nav className="nav-container">

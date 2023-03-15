@@ -36,27 +36,27 @@ const IngredientsList = ({
         />
       </div>
       <div className="big-grid">
-      <div id="spells-container" className="selected-ingredient" >
-        {selectedIngredient ? (
-          <IngredientSelector
-            selectedIngredient={selectedIngredient}
-            elixirsWithIngredients={elixirsWithIngredients}
-          />
-        ) : null}
-      </div>
-      <div id="spells-container" className="all-ingredients">
-        {IngredientsItems.filter((list) => {
-          if (query === "") {
-            return list;
-          } else if (
-            list.props.ingredient.name
-              .toLowerCase()
-              .includes(query.toLowerCase())
-          ) {
-            return list;
-          }
-        })}
-      </div>
+        <div id="spells-container" className="selected-ingredient">
+          {selectedIngredient ? (
+            <IngredientSelector
+              selectedIngredient={selectedIngredient}
+              elixirsWithIngredients={elixirsWithIngredients}
+            />
+          ) : null}
+        </div>
+        <div id="spells-container" className="all-ingredients">
+          {IngredientsItems.filter((list) => {
+            if (query === "") {
+              return list;
+            } else if (
+              list.props.ingredient.name
+                .toLowerCase()
+                .includes(query.toLowerCase())
+            ) {
+              return list;
+            }
+          })}
+        </div>
       </div>
     </div>
   );

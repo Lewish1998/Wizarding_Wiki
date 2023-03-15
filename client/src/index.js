@@ -1,13 +1,14 @@
-import './index.css'
-import React, { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
+import "./index.css";
+import React, { useEffect, useState } from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<div>
+root.render(
+  <div>
     <React.StrictMode>
-        <App />
+      <App />
     </React.StrictMode>
-    </div>
+  </div>
 );
