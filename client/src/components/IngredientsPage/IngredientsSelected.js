@@ -1,3 +1,4 @@
+import '../Style/Spells.css'
 const IngredientSelector = ({ selectedIngredient, elixirsWithIngredients }) => {
 
   const ElixirsWithIngredientsItems = elixirsWithIngredients.map((elixir) => {
@@ -5,7 +6,7 @@ const IngredientSelector = ({ selectedIngredient, elixirsWithIngredients }) => {
       <div>
         Used in:
         <h2>
-          <li>{elixir.name}</li>
+          <li><u>{elixir.name}</u></li>
         </h2>{" "}
         Having the following effect: <br /> <h3><li>{elixir.effect}</li></h3> Other Secondaries: {elixir.ingredients.map((secondaries)=>{
             return (<li>{secondaries.name} <br/></li>)
@@ -15,8 +16,8 @@ const IngredientSelector = ({ selectedIngredient, elixirsWithIngredients }) => {
   });
 
   return (
-    <div>
-      <h1>{selectedIngredient.split("%20").join(" ")}</h1>
+    <div className="sticky-container">
+      <h1><u>{selectedIngredient.split("%20").join(" ")}</u></h1>
       <ul> {ElixirsWithIngredientsItems}</ul>
     </div>
   );
