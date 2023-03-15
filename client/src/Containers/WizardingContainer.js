@@ -14,10 +14,11 @@ import HousesList from '../Components/HousesPage/HousesList';
 const spellsAPI = "https://wizard-world-api.herokuapp.com/Spells";
 const ingredientsAPI = 'https://wizard-world-api.herokuapp.com/Ingredients'
 const elixirsAPI = "https://wizard-world-api.herokuapp.com/Elixirs";
+const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses'
 
 const WizardingContainer = () => {
   
-
+// vars for spells etc
 const [spells, setSpells] = useState([]);
 const [elixirs,setElixirs] =useState([])
 const [ingredients, setIngredients] = useState([])
@@ -25,8 +26,8 @@ const [selectedElixir,setSelectedElixir]=useState([])
 const [selectedSpellType, setSelectedSpellType] = useState([])
 const [selectedIngredient,setselectedIngredient]=useState(null)
 const [elixirsWithIngredients,setElixirsWithIngredients]=useState([])
+const [houses, setHouses] = useState([]);
 
-const housesAPI = 'https://wizard-world-api.herokuapp.com/Houses'
 
 const handleSelectedElixir = elixir =>{
   setSelectedElixir(elixir)
@@ -41,7 +42,6 @@ const onIngredientClicked = (ingredient)=>{
   })
 }
 
-const [houses, setHouses] = useState([]);
 
 useEffect(() => {
   getSpells();
@@ -57,7 +57,6 @@ const getSpells = () => {
     setSpells(data)
   });
 };
-
 
 const getIngredients = () => {
   fetch(ingredientsAPI)
@@ -113,7 +112,6 @@ const onMouseMove = (e) =>{
   circle.style.top = e.pageY + 'px';
 }
 document.addEventListener('mousemove', onMouseMove);
-
 
     return(
       <div>
