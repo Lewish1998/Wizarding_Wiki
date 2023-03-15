@@ -3,8 +3,8 @@ const IngredientSelector = ({ selectedIngredient, elixirsWithIngredients }) => {
 
   const ElixirsWithIngredientsItems = elixirsWithIngredients.map((elixir) => {
     return (
-      <div>
-        Used in:
+      <div className = 'ingredients-info'>
+        <p>Used in: </p>
         <h2>
           <li><u>{elixir.name}</u></li>
         </h2>{" "}

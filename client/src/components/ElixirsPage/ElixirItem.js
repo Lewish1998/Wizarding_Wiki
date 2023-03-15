@@ -10,10 +10,10 @@ const ElixirItem = ({elixir})=>{
     }
 
 return(
-    <div id="spell-item" onClick={toggle}>
+    <div id="spell-item" className='expand-transition' onClick={toggle}>
         <h3>{elixir.name}</h3>
         {open &&
-        <div>
+        <div id='expanded-elixir'>
             {elixir.effect ? <li><b>Effect:</b> {elixir.effect}</li> : <li><b>Effect:</b> Unknown</li>}
             {elixir.sideEffects ? <li><b>Side Effect:</b> {elixir.sideEffects}</li> : <li><b>Side Effect:</b> Unknown</li>}
             {elixir.time ?<li><b>Time:</b> {elixir.time}</li>: <li><b>Time:</b> Unknown</li>}
