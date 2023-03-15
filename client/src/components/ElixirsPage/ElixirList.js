@@ -44,20 +44,6 @@ const ElixirsList = ({ elixirs, handleElixirChanges }) => {
           onChange={(event) => setQuery(event.target.value)}
         />
       </div>
-
-
-    <div className='flex-center-top'>
-
-      <select onChange={handleChange}>
-        {ElixirDifficulty.map((difficulty) => {
-          return (
-            <option key={difficulty} value={difficulty}>
-              {difficulty}
-            </option>
-          );
-        })}
-      </select>
-      </div>
         <div id='spells-container'>
       {ElixirItems.filter((list) => {
         if (query === "") {
