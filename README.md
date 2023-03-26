@@ -12,7 +12,7 @@ Looking back I would like to condense some of the pages down to display less ite
 I would also like to add some more images or colours specific on the item selected by the viewer.
 
 
-![HomePage](images/home-page.png)
+![HomePage](./images/home-page.png)
 ![Spells Dropdown](images/spells-dropdown.png)
 ![Spells Info](images/spells-info.png)
 ![Spells Search](images/spells-search.png)
