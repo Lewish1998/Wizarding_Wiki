@@ -12,11 +12,11 @@ Looking back I would like to condense some of the pages down to display less ite
 I would also like to add some more images or colours specific on the item selected by the viewer.
 
 
-![HomePage](./images/home-page.png)
-![Spells Dropdown](images/spells-dropdown.png)
-![Spells Info](images/spells-info.png)
-![Spells Search](images/spells-search.png)
-![Ingredients Info](images/ingredients-info.png)
-![Houses Info](images/houses-info.png)
-![Elixirs Info](images/elixirs-info.png)
+![HomePage](screenshots/home-page.png)
+![Spells Dropdown](screenshots/spells-dropdown.png)
+![Spells Info](screenshots/spells-info.png)
+![Spells Search](screenshots/spells-search.png)
+![Ingredients Info](screenshots/ingredients-info.png)
+![Houses Info](screenshots/houses-info.png)
+![Elixirs Info](screenshots/elixirs-info.png)
 
