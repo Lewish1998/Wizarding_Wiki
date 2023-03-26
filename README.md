@@ -13,9 +13,10 @@ I would also like to add some more images or colours specific on the item select
 
 
 ![HomePage](images/home-page.png)
-![HomePage](images/spells-dropdown.png)
-![HomePage](images/spells-info.png)
-![HomePage](images/spells-search.png)
-![HomePage](images/ingredients-info.png)
-![HomePage](images/houses-info.png)
-![HomePage](images/elixirs-info.png)
+![Spells Dropdown](images/spells-dropdown.png)
+![Spells Info](images/spells-info.png)
+![Spells Search](images/spells-search.png)
+![Ingredients Info](images/ingredients-info.png)
+![Houses Info](images/houses-info.png)
+![Elixirs Info](images/elixirs-info.png)
+
