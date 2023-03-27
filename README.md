@@ -1,5 +1,6 @@
 <h1>Wizarding Wiki</h1>
 <h3>A Harry Potter information app created with React</h3>
+<hr/>
 
 Our goal for this project was to work collaboratively to create an informative app using React and APIs.
 
