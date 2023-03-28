@@ -20,4 +20,5 @@ I would also like to add some more images or colours specific on the item select
 ![Ingredients Info](screenshots/ingredients-info.png)
 ![Houses Info](screenshots/houses-info.png)
 ![Elixirs Info](screenshots/elixirs-info.png)
+![Spells Search Bar](screenshots/spells-searcg.png)
 
